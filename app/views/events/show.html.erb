@@ -4,4 +4,6 @@
 <p>Host: <%= @event.host.email %></p>
 <p>Number of Attendees: <%= @event.attendees.count %></p>
 
-<%= button_to 'Attend this event' %>
+<%= button_to 'Attend', attendances_path(event_id: @event.id) if current%>
+<%#Create 'unattend' btn %>
+<%# display that user is host and display no btn%>
