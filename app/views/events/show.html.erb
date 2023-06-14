@@ -1,4 +1,7 @@
 <p><%= @event.name %></p>
-<p><%= @event.location %></p>
-<p><%= @event.event_date %></p>
-<p><%= @event.host.email %></p>
+<p>Location: <%= @event.location %></p>
+<p>Time: <%= @event.event_date %></p>
+<p>Host: <%= @event.host.email %></p>
+<p>Number of Attendees: <%= @event.attendees.count %></p>
+
+<%= button_to 'Attend this event' %>
