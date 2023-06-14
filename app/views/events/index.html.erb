@@ -1,1 +1,10 @@
-<h1>Index of Events</h1>
+<h1>Upcoming Events</h1>
+
+<% @events.each do |e| %>
+    <div>
+        <p><%= e.name %></p>
+        <p><%= e.location %></p>
+        <p><%= e.event_date %></p>
+        <p>Host: <%= e.host.email %></p>
+    </div>
+<% end %>
