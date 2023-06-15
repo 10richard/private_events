@@ -1,11 +1,26 @@
 <h1>All Events</h1>
 
-<% @events.each do |e| %>
-    <div>
-        <p><%= e.name %></p>
-        <p><%= e.location %></p>
-        <p><%= e.event_date %></p>
-        <p>Host: <%= e.host.email %></p>
-        <%= link_to 'More Details', event_path(e)%>
-    </div>
-<% end %>
+<% upcoming = @events.upcoming%>
+<% past = @events.past %>
+
+<h2>Upcoming Events</h2>
+    <% upcoming.each do |e| %>
+        <div>
+            <p><%= e.name %></p>
+            <p><%= e.location %></p>
+            <p><%= e.event_date %></p>
+            <p>Host: <%= e.host.email %></p>
+            <%= link_to 'More Details', event_path(e)%>
+        </div>
+    <% end %>
+
+<h2>Past Events</h2>
+    <% past.each do |e| %>
+        <div>
+            <p><%= e.name %></p>
+            <p><%= e.location %></p>
+            <p><%= e.event_date %></p>
+            <p>Host: <%= e.host.email %></p>
+            <p>Attendees: <%= e.attendees.count %>
+        </div>
+    <% end %>
