@@ -6,5 +6,6 @@
         <p><%= e.location %></p>
         <p><%= e.event_date %></p>
         <p>Host: <%= e.host.email %></p>
+        <%= link_to 'More Details', event_path(e)%>
     </div>
 <% end %>
