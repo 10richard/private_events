@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <%= link_to 'Home', :root %>
+    <%= link_to 'Sign Up', '/users/sign_up' unless user_signed_in? %>
+    <%= link_to 'Sign Out', '/users/sign_out', data: { turbo_method: :delete } if user_signed_in? %>
+    <%= link_to 'Create Event', '/events/new' if user_signed_in? %>
     <%= yield %>
   </body>
 </html>
