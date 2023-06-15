@@ -9,5 +9,5 @@
 <% elsif Attendance.where(event: @event.id, attendee: current_user.id).exists? %>
     <%= button_to 'Unattend', attendance_path, params: {id: @event.id}, method: :delete %>
 <% else %>
-    <%= button_to 'Attend', attendances_path(event_id: @event.id)%>
+    <%= button_to 'Attend', attendances_path, params: {id: @event.id} %>
 <% end %>
