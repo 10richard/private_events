@@ -3,5 +3,5 @@ class Event < ApplicationRecord
     belongs_to :host, class_name: 'User'
     
     has_many :attendances
-    has_many :attendees, through: :attendances, class_name: 'User'
+    has_many :attendees, through: :attendances, source: :attendee
 end
