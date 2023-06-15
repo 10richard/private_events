@@ -1,24 +1,3 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Project is part of TheOdinProject cirriculum can be found here https://www.theodinproject.com/lessons/ruby-on-rails-private-events. Building an application with Ruby on Rails where users can create and attend Events. Focus of this project will be to work with ActiveRecord's associations (model relationships).
