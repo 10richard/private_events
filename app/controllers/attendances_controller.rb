@@ -3,14 +3,15 @@ class AttendancesController < ApplicationController
 
     def create
         event = Event.find(params[:event_id])
-        attendance = Attendance.new(event_id: event.id, attendee_id: current_user.id)
+        attendance = Attendance.new(event_id: event.id, attendee_id: current_user.id, attending: true)
     
         if attendance.save
-          redirect_to :root and return
+          redirect_to request.referrer and return
         end
     end
 
     def destroy
-        current_user.attendances.find(event: params[:event_id]).destroy
+        Attendance.find_by(event_id: params[:id], attendee_id: current_user.id).destroy
+        redirect_to request.referrer
     end
 end
